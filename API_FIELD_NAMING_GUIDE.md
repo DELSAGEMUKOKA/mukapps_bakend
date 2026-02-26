@@ -3,6 +3,7 @@
     "name": "Inventory Management API",
     "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
   },
+  pour jjhdh
   "item": [
     {
       "name": "🔐 AUTH",

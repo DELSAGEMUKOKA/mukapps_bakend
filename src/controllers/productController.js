@@ -11,7 +11,7 @@ export const productController = {
    */
   async index(req, res, next) {
     try {
-      const { page = 1, limit = 20, search, categoryId, lowStock } = req.query;
+      const { page = 1, limit = 5000, search, categoryId, lowStock } = req.query;
       const offset = (page - 1) * limit;
 
       const where = { companyId: req.user.companyId };
@@ -394,7 +394,7 @@ export const productController = {
           as: 'category',  // ✅ Utiliser l'alias correct
           attributes: ['id', 'name'] 
         }],
-        limit: 20
+        limit: 5000
       });
 
       res.json({ success: true, data: products });

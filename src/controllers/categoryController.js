@@ -53,7 +53,7 @@ export const createCategory = async (req, res, next) => {
 export const getCategories = async (req, res, next) => {
   try {
     const companyId = req.user.companyId;
-    const { page = 1, limit = 20, search } = req.query;
+    const { page = 1, limit = 5000, search } = req.query;
     const offset = (page - 1) * limit;
 
     // Construire la requête
