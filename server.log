@@ -1,0 +1,10 @@
+
+> inventory-backend@1.0.0 start
+> node src/server.js
+
+2026-02-03 17:04:47 [[32minfo[39m]: Server running in development mode on port 5000 
+2026-02-03 17:04:47 [[32minfo[39m]: API available at http://localhost:5000/api/v1 
+2026-02-03 17:04:49 [[32mhttp[39m]: ::1 - - [03/Feb/2026:17:04:49 +0000] "GET /api/v1/reports/dashboard HTTP/1.1" 200 161 "-" "curl/8.14.1" 
+2026-02-03 17:04:58 [[32mhttp[39m]: ::1 - - [03/Feb/2026:17:04:58 +0000] "GET /api/v1/categories HTTP/1.1" 200 336 "-" "curl/8.14.1" 
+2026-02-03 17:04:59 [[32mhttp[39m]: ::1 - - [03/Feb/2026:17:04:59 +0000] "GET /api/v1/stock/valuation HTTP/1.1" 200 121 "-" "curl/8.14.1" 
+2026-02-03 17:04:59 [[32mhttp[39m]: ::1 - - [03/Feb/2026:17:04:59 +0000] "GET /api/v1/subscriptions HTTP/1.1" 200 459 "-" "curl/8.14.1" 

@@ -1,0 +1,667 @@
+{
+  "info": {
+    "name": "Inventory Management API - Complete Testing",
+    "description": "Comprehensive API testing collection for multi-tenant inventory management system. Includes authentication, CRUD operations, multi-tenant isolation tests, and security validation.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "inventory-api-v1"
+  },
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{access_token_a}}",
+        "type": "string"
+      }
+    ]
+  },
+  "item": [
+    {
+      "name": "1. Authentication",
+      "item": [
+        {
+          "name": "1.1 Register Company A",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status is 201\", () => pm.response.to.have.status(201));",
+                  "pm.test(\"Has token\", () => pm.expect(pm.response.json().data.token).to.exist);",
+                  "",
+                  "const res = pm.response.json();",
+                  "if (res.success) {",
+                  "    pm.environment.set(\"access_token_a\", res.data.token);",
+                  "    pm.environment.set(\"refresh_token_a\", res.data.refreshToken);",
+                  "    pm.environment.set(\"user_id_a\", res.data.user.id);",
+                  "    pm.environment.set(\"company_id_a\", res.data.company.id);",
+                  "    console.log(\"✅ Company A tokens saved\");",
+                  "}"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"John Doe\",\n  \"email\": \"admin@companya.com\",\n  \"password\": \"SecurePass123!\",\n  \"companyName\": \"Company A - Electronics Store\",\n  \"phone\": \"+1234567890\"\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/auth/register",
+              "host": ["{{base_url}}"],
+              "path": ["auth", "register"]
+            },
+            "description": "Creates first company with admin user and 14-day trial subscription"
+          }
+        },
+        {
+          "name": "1.2 Login Company A",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status is 200\", () => pm.response.to.have.status(200));",
+                  "",
+                  "const res = pm.response.json();",
+                  "if (res.success) {",
+                  "    pm.environment.set(\"access_token_a\", res.data.token);",
+                  "    pm.environment.set(\"refresh_token_a\", res.data.refreshToken);",
+                  "}"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"email\": \"admin@companya.com\",\n  \"password\": \"SecurePass123!\"\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/auth/login",
+              "host": ["{{base_url}}"],
+              "path": ["auth", "login"]
+            }
+          }
+        },
+        {
+          "name": "1.3 Get Current User",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/auth/me",
+              "host": ["{{base_url}}"],
+              "path": ["auth", "me"]
+            }
+          }
+        },
+        {
+          "name": "1.4 Refresh Token",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"refreshToken\": \"{{refresh_token_a}}\"\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/auth/refresh",
+              "host": ["{{base_url}}"],
+              "path": ["auth", "refresh"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "2. User Management",
+      "item": [
+        {
+          "name": "2.1 Create Supervisor",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status is 201\", () => pm.response.to.have.status(201));",
+                  "pm.test(\"User has correct company\", () => {",
+                  "    const user = pm.response.json().data;",
+                  "    const companyId = pm.environment.get(\"company_id_a\");",
+                  "    pm.expect(user.company_id).to.eql(companyId);",
+                  "});"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Alice Supervisor\",\n  \"email\": \"alice@companya.com\",\n  \"password\": \"SupervisorPass123!\",\n  \"role\": \"supervisor\",\n  \"phone\": \"+1234567891\"\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/users",
+              "host": ["{{base_url}}"],
+              "path": ["users"]
+            }
+          }
+        },
+        {
+          "name": "2.2 Create Operator",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Charlie Operator\",\n  \"email\": \"charlie@companya.com\",\n  \"password\": \"OperatorPass123!\",\n  \"role\": \"operator\"\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/users",
+              "host": ["{{base_url}}"],
+              "path": ["users"]
+            }
+          }
+        },
+        {
+          "name": "2.3 Create Cashier",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"David Cashier\",\n  \"email\": \"david@companya.com\",\n  \"password\": \"CashierPass123!\",\n  \"role\": \"cashier\"\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/users",
+              "host": ["{{base_url}}"],
+              "path": ["users"]
+            }
+          }
+        },
+        {
+          "name": "2.4 List Users",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/users?page=1&limit=20",
+              "host": ["{{base_url}}"],
+              "path": ["users"],
+              "query": [
+                {"key": "page", "value": "1"},
+                {"key": "limit", "value": "20"}
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "3. Categories",
+      "item": [
+        {
+          "name": "3.1 Create Category",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "const res = pm.response.json();",
+                  "if (res.success) {",
+                  "    pm.environment.set(\"category_id\", res.data.id);",
+                  "}"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Electronics\",\n  \"description\": \"Electronic devices and accessories\",\n  \"icon\": \"📱\"\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/categories",
+              "host": ["{{base_url}}"],
+              "path": ["categories"]
+            }
+          }
+        },
+        {
+          "name": "3.2 List Categories",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/categories",
+              "host": ["{{base_url}}"],
+              "path": ["categories"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "4. Products",
+      "item": [
+        {
+          "name": "4.1 Create Product",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "const res = pm.response.json();",
+                  "if (res.success) {",
+                  "    pm.environment.set(\"product_id\", res.data.id);",
+                  "}"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Laptop Dell XPS 15\",\n  \"barcode\": \"PROD-001\",\n  \"category_id\": \"{{category_id}}\",\n  \"description\": \"High-performance laptop\",\n  \"purchase_price\": 1000.00,\n  \"selling_price\": 1500.00,\n  \"current_stock\": 10,\n  \"min_stock_level\": 5,\n  \"unit\": \"piece\"\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/products",
+              "host": ["{{base_url}}"],
+              "path": ["products"]
+            }
+          }
+        },
+        {
+          "name": "4.2 List Products",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/products",
+              "host": ["{{base_url}}"],
+              "path": ["products"]
+            }
+          }
+        },
+        {
+          "name": "4.3 Get Product by ID",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/products/{{product_id}}",
+              "host": ["{{base_url}}"],
+              "path": ["products", "{{product_id}}"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "5. Customers",
+      "item": [
+        {
+          "name": "5.1 Create Customer",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "const res = pm.response.json();",
+                  "if (res.success) {",
+                  "    pm.environment.set(\"customer_id\", res.data.id);",
+                  "}"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Customer Alpha Corp\",\n  \"email\": \"contact@alphacorp.com\",\n  \"phone\": \"+1234567890\",\n  \"address\": \"123 Business Street\",\n  \"city\": \"New York\"\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/customers",
+              "host": ["{{base_url}}"],
+              "path": ["customers"]
+            }
+          }
+        },
+        {
+          "name": "5.2 List Customers",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/customers",
+              "host": ["{{base_url}}"],
+              "path": ["customers"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "6. Invoices",
+      "item": [
+        {
+          "name": "6.1 Create Invoice",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Invoice created\", () => pm.response.to.have.status(201));",
+                  "pm.test(\"Has invoice number\", () => {",
+                  "    const invoice = pm.response.json().data;",
+                  "    pm.expect(invoice.invoice_number).to.match(/^INV-\\d+$/);",
+                  "});",
+                  "",
+                  "const res = pm.response.json();",
+                  "if (res.success) {",
+                  "    pm.environment.set(\"invoice_id\", res.data.id);",
+                  "}"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"customer_id\": \"{{customer_id}}\",\n  \"items\": [\n    {\n      \"product_id\": \"{{product_id}}\",\n      \"quantity\": 2,\n      \"unit_price\": 1500.00,\n      \"discount\": 50.00,\n      \"tax\": 0\n    }\n  ],\n  \"payment_method\": \"cash\",\n  \"payment_status\": \"paid\",\n  \"notes\": \"First sale\"\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/invoices",
+              "host": ["{{base_url}}"],
+              "path": ["invoices"]
+            }
+          }
+        },
+        {
+          "name": "6.2 List Invoices",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/invoices",
+              "host": ["{{base_url}}"],
+              "path": ["invoices"]
+            }
+          }
+        },
+        {
+          "name": "6.3 Verify Stock Deduction",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Stock deducted\", () => {",
+                  "    const product = pm.response.json().data;",
+                  "    pm.expect(product.current_stock).to.eql(8);",
+                  "});"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/products/{{product_id}}",
+              "host": ["{{base_url}}"],
+              "path": ["products", "{{product_id}}"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "7. Multi-Tenant Isolation",
+      "item": [
+        {
+          "name": "7.1 Register Company B",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "const res = pm.response.json();",
+                  "if (res.success) {",
+                  "    pm.environment.set(\"access_token_b\", res.data.token);",
+                  "    pm.environment.set(\"company_id_b\", res.data.company.id);",
+                  "    console.log(\"✅ Company B tokens saved\");",
+                  "}"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Jane Smith\",\n  \"email\": \"admin@companyb.com\",\n  \"password\": \"SecurePass456!\",\n  \"companyName\": \"Company B - Furniture\",\n  \"phone\": \"+0987654321\"\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/auth/register",
+              "host": ["{{base_url}}"],
+              "path": ["auth", "register"]
+            }
+          }
+        },
+        {
+          "name": "7.2 Create Product (Same Barcode)",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{access_token_b}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Monitor Samsung\",\n  \"barcode\": \"PROD-001\",\n  \"purchase_price\": 300,\n  \"selling_price\": 450,\n  \"current_stock\": 20\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/products",
+              "host": ["{{base_url}}"],
+              "path": ["products"]
+            },
+            "description": "Same barcode as Company A product - should succeed"
+          }
+        },
+        {
+          "name": "7.3 Test Cross-Company Access",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Returns 404\", () => pm.response.to.have.status(404));",
+                  "pm.test(\"Generic error\", () => {",
+                  "    const msg = pm.response.json().message;",
+                  "    pm.expect(msg).to.include(\"not found\");",
+                  "});"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{access_token_b}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/products/{{product_id}}",
+              "host": ["{{base_url}}"],
+              "path": ["products", "{{product_id}}"]
+            },
+            "description": "Company B trying to access Company A's product - should fail"
+          }
+        }
+      ]
+    },
+    {
+      "name": "8. Security Tests",
+      "item": [
+        {
+          "name": "8.1 Test No Token",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Returns 401\", () => pm.response.to.have.status(401));"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/products",
+              "host": ["{{base_url}}"],
+              "path": ["products"]
+            }
+          }
+        },
+        {
+          "name": "8.2 Test Invalid Token",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Returns 401\", () => pm.response.to.have.status(401));"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "invalid_token_xyz",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/products",
+              "host": ["{{base_url}}"],
+              "path": ["products"]
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

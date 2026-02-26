@@ -1,0 +1,30 @@
+{
+  "watch": [
+    "src/**/*.js",
+    ".env"
+  ],
+  "ignore": [
+    "src/tests/**",
+    "node_modules/**",
+    "logs/**",
+    "uploads/**",
+    "coverage/**",
+    "*.test.js",
+    "*.spec.js"
+  ],
+  "ext": "js,json",
+  "exec": "node src/server.js",
+  "env": {
+    "NODE_ENV": "development"
+  },
+  "restartable": "rs",
+  "colours": true,
+  "delay": 1000,
+  "verbose": true,
+  "events": {
+    "restart": "echo '\n🔄 Restarting server due to file changes...\n'",
+    "crash": "echo '\n❌ Server crashed - waiting for file changes...\n'",
+    "start": "echo '\n✅ Server started successfully\n'"
+  },
+  "signal": "SIGTERM"
+}
