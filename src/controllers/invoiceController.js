@@ -172,7 +172,7 @@ export const getInvoices = async (req, res, next) => {
     
     const { 
       page = 1, 
-      limit = 20, 
+      limit = 5000, 
       startDate, 
       endDate, 
       customerId, 

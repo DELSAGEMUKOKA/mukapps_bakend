@@ -23556,3 +23556,272 @@ SequelizeEagerLoadingError: User is associated to Expense multiple times. To ide
 2026-02-26 17:43:07 [HTTP]: ::1 - - [26/Feb/2026:16:43:07 +0000] "GET /api/v1/categories HTTP/1.1" 304 - "http://localhost:5174/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Edg/145.0.0.0"
 2026-02-26 17:43:07 [INFO]: HTTP Request {"method":"GET","url":"/api/v1/categories","statusCode":304,"responseTime":"35ms","ip":"::1","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Edg/145.0.0.0","userId":"2ee36f23-00c1-4c19-9552-86b1fe5bb206","companyId":"006120ca-9187-4b9f-b0f3-f1b20eb8523b"}
 2026-02-26 17:43:38 [INFO]: =================================================================
+2026-02-26 17:50:13 [INFO]: =================================================================
+2026-02-26 17:50:13 [INFO]: Starting Inventory Management System...
+2026-02-26 17:50:13 [INFO]: =================================================================
+2026-02-26 17:50:13 [INFO]: Validating environment configuration...
+2026-02-26 17:50:13 [INFO]: Environment validation passed
+2026-02-26 17:50:13 [INFO]: Ensuring required directories exist...
+2026-02-26 17:50:13 [INFO]: Directory check completed
+2026-02-26 17:50:13 [INFO]: System Information:
+2026-02-26 17:50:13 [INFO]:   Node.js: v24.12.0
+2026-02-26 17:50:13 [INFO]:   Platform: win32 (x64)
+2026-02-26 17:50:13 [INFO]:   Environment: development
+2026-02-26 17:50:13 [INFO]:   Memory: 58 MB
+2026-02-26 17:50:13 [INFO]:   CPU Cores: 8
+2026-02-26 17:50:13 [INFO]:   Process ID: 21096
+2026-02-26 17:50:13 [INFO]: Connection Information:
+2026-02-26 17:50:13 [INFO]:   Database: MySQL (localhost:3306)
+2026-02-26 17:50:13 [INFO]:   Database Name: inventory_db
+2026-02-26 17:50:13 [INFO]:   Server Port: 5000
+2026-02-26 17:50:13 [INFO]: Testing database connection...
+2026-02-26 17:50:13 [INFO]: Database connection established successfully
+2026-02-26 17:50:13 [INFO]: Database version: 10.4.32-MariaDB
+2026-02-26 17:50:13 [INFO]: Checking database storage engines...
+2026-02-26 17:50:13 [INFO]: Storage engine check completed
+2026-02-26 17:50:13 [INFO]: Synchronizing database schema...
+2026-02-26 17:50:14 [INFO]: Database schema synchronized successfully
+2026-02-26 17:50:14 [INFO]: Initializing scheduler service...
+2026-02-26 17:50:14 [INFO]: Initializing scheduler service...
+2026-02-26 17:50:14 [INFO]: Invoice cleanup enabled: deleting invoices older than 140 days, running every 24 hours
+2026-02-26 17:50:14 [INFO]: Invoice cleanup scheduled: running every 24 hours
+2026-02-26 17:50:14 [INFO]: Scheduler service initialized
+2026-02-26 17:50:14 [INFO]: Scheduler service initialized
+2026-02-26 17:50:14 [INFO]: =================================================================
+2026-02-26 17:50:14 [INFO]: Server Started Successfully!
+2026-02-26 17:50:14 [INFO]: =================================================================
+2026-02-26 17:50:14 [INFO]:   Status: RUNNING
+2026-02-26 17:50:14 [INFO]:   Mode: DEVELOPMENT
+2026-02-26 17:50:14 [INFO]:   Port: 5000
+2026-02-26 17:50:14 [INFO]: 
+2026-02-26 17:50:14 [INFO]: Available Endpoints:
+2026-02-26 17:50:14 [INFO]:   🏠 Home:        http://localhost:5000/
+2026-02-26 17:50:14 [INFO]:   🚀 API:         http://localhost:5000/api/v1
+2026-02-26 17:50:14 [INFO]:   ❤️  Health:      http://localhost:5000/health
+2026-02-26 17:50:14 [INFO]: 
+2026-02-26 17:50:14 [INFO]: API Routes:
+2026-02-26 17:50:14 [INFO]:   🔐 Auth:        http://localhost:5000/api/v1/auth
+2026-02-26 17:50:14 [INFO]:   👥 Users:       http://localhost:5000/api/v1/users
+2026-02-26 17:50:14 [INFO]:   🏢 Companies:   http://localhost:5000/api/v1/companies
+2026-02-26 17:50:14 [INFO]:   📦 Products:    http://localhost:5000/api/v1/products
+2026-02-26 17:50:14 [INFO]:   🏷️  Categories:  http://localhost:5000/api/v1/categories
+2026-02-26 17:50:14 [INFO]:   👤 Customers:   http://localhost:5000/api/v1/customers
+2026-02-26 17:50:14 [INFO]:   🧾 Invoices:    http://localhost:5000/api/v1/invoices
+2026-02-26 17:50:14 [INFO]:   💰 Expenses:    http://localhost:5000/api/v1/expenses
+2026-02-26 17:50:14 [INFO]:   📊 Reports:     http://localhost:5000/api/v1/reports
+2026-02-26 17:50:14 [INFO]:   📈 Stock:       http://localhost:5000/api/v1/stock
+2026-02-26 17:50:14 [INFO]:   ⚙️ Settings:    http://localhost:5000/api/v1/settings
+2026-02-26 17:50:14 [INFO]:   📋 Subscriptions: http://localhost:5000/api/v1/subscriptions
+2026-02-26 17:50:14 [INFO]: =================================================================
+2026-02-26 17:50:14 [INFO]: System Event {"event":"server_started","port":5000,"environment":"development","nodeVersion":"v24.12.0","pid":21096}
+2026-02-26 17:50:19 [DEBUG]: Company isolation check passed {"companyId":"006120ca-9187-4b9f-b0f3-f1b20eb8523b","userId":"2ee36f23-00c1-4c19-9552-86b1fe5bb206","path":"/current"}
+2026-02-26 17:50:19 [HTTP]: ::1 - - [26/Feb/2026:16:50:19 +0000] "GET /api/v1/subscriptions/current HTTP/1.1" 200 230 "-" "PostmanRuntime/7.51.1"
+2026-02-26 17:50:19 [INFO]: HTTP Request {"method":"GET","url":"/api/v1/subscriptions/current","statusCode":200,"responseTime":"43ms","ip":"::1","userAgent":"PostmanRuntime/7.51.1","userId":"2ee36f23-00c1-4c19-9552-86b1fe5bb206","companyId":"006120ca-9187-4b9f-b0f3-f1b20eb8523b"}
+2026-02-26 17:51:18 [DEBUG]: Company isolation check passed {"companyId":"006120ca-9187-4b9f-b0f3-f1b20eb8523b","userId":"2ee36f23-00c1-4c19-9552-86b1fe5bb206","path":"/upgrade"}
+2026-02-26 17:51:18 [WARN]: Client Error: {"error":"No subscription found","code":"NOT_FOUND","url":"/api/v1/subscriptions/upgrade","user":"2ee36f23-00c1-4c19-9552-86b1fe5bb206"}
+2026-02-26 17:51:18 [HTTP]: ::1 - - [26/Feb/2026:16:51:18 +0000] "POST /api/v1/subscriptions/upgrade HTTP/1.1" 404 361 "-" "PostmanRuntime/7.51.1"
+2026-02-26 17:51:18 [ERROR]: HTTP Request Failed {"method":"POST","url":"/api/v1/subscriptions/upgrade","statusCode":404,"responseTime":"33ms","ip":"::1","userAgent":"PostmanRuntime/7.51.1","userId":"2ee36f23-00c1-4c19-9552-86b1fe5bb206","companyId":"006120ca-9187-4b9f-b0f3-f1b20eb8523b"}
+2026-02-26 17:52:04 [DEBUG]: Company isolation check passed {"companyId":"006120ca-9187-4b9f-b0f3-f1b20eb8523b","userId":"2ee36f23-00c1-4c19-9552-86b1fe5bb206","path":"/"}
+2026-02-26 17:52:04 [HTTP]: ::1 - - [26/Feb/2026:16:52:04 +0000] "GET /api/v1/categories HTTP/1.1" 304 - "http://localhost:5174/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Edg/145.0.0.0"
+2026-02-26 17:52:04 [INFO]: HTTP Request {"method":"GET","url":"/api/v1/categories","statusCode":304,"responseTime":"34ms","ip":"::1","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Edg/145.0.0.0","userId":"2ee36f23-00c1-4c19-9552-86b1fe5bb206","companyId":"006120ca-9187-4b9f-b0f3-f1b20eb8523b"}
+2026-02-26 17:52:04 [DEBUG]: Company isolation check passed {"companyId":"006120ca-9187-4b9f-b0f3-f1b20eb8523b","userId":"2ee36f23-00c1-4c19-9552-86b1fe5bb206","path":"/"}
+2026-02-26 17:52:04 [HTTP]: ::1 - - [26/Feb/2026:16:52:04 +0000] "GET /api/v1/categories HTTP/1.1" 304 - "http://localhost:5174/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Edg/145.0.0.0"
+2026-02-26 17:52:04 [INFO]: HTTP Request {"method":"GET","url":"/api/v1/categories","statusCode":304,"responseTime":"23ms","ip":"::1","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Edg/145.0.0.0","userId":"2ee36f23-00c1-4c19-9552-86b1fe5bb206","companyId":"006120ca-9187-4b9f-b0f3-f1b20eb8523b"}
+2026-02-26 17:52:06 [DEBUG]: Company isolation check passed {"companyId":"006120ca-9187-4b9f-b0f3-f1b20eb8523b","userId":"2ee36f23-00c1-4c19-9552-86b1fe5bb206","path":"/"}
+2026-02-26 17:52:06 [DEBUG]: Company isolation check passed {"companyId":"006120ca-9187-4b9f-b0f3-f1b20eb8523b","userId":"2ee36f23-00c1-4c19-9552-86b1fe5bb206","path":"/movements"}
+2026-02-26 17:52:06 [HTTP]: ::1 - - [26/Feb/2026:16:52:06 +0000] "GET /api/v1/products HTTP/1.1" 304 - "http://localhost:5174/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Edg/145.0.0.0"
+2026-02-26 17:52:06 [INFO]: HTTP Request {"method":"GET","url":"/api/v1/products","statusCode":304,"responseTime":"58ms","ip":"::1","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Edg/145.0.0.0","userId":"2ee36f23-00c1-4c19-9552-86b1fe5bb206","companyId":"006120ca-9187-4b9f-b0f3-f1b20eb8523b"}
+2026-02-26 17:52:06 [HTTP]: ::1 - - [26/Feb/2026:16:52:06 +0000] "GET /api/v1/stock/movements HTTP/1.1" 304 - "http://localhost:5174/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Edg/145.0.0.0"
+2026-02-26 17:52:06 [INFO]: HTTP Request {"method":"GET","url":"/api/v1/stock/movements","statusCode":304,"responseTime":"61ms","ip":"::1","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Edg/145.0.0.0","userId":"2ee36f23-00c1-4c19-9552-86b1fe5bb206","companyId":"006120ca-9187-4b9f-b0f3-f1b20eb8523b"}
+2026-02-26 17:52:06 [DEBUG]: Company isolation check passed {"companyId":"006120ca-9187-4b9f-b0f3-f1b20eb8523b","userId":"2ee36f23-00c1-4c19-9552-86b1fe5bb206","path":"/"}
+2026-02-26 17:52:06 [DEBUG]: Company isolation check passed {"companyId":"006120ca-9187-4b9f-b0f3-f1b20eb8523b","userId":"2ee36f23-00c1-4c19-9552-86b1fe5bb206","path":"/movements"}
+2026-02-26 17:52:06 [HTTP]: ::1 - - [26/Feb/2026:16:52:06 +0000] "GET /api/v1/products HTTP/1.1" 304 - "http://localhost:5174/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Edg/145.0.0.0"
+2026-02-26 17:52:06 [INFO]: HTTP Request {"method":"GET","url":"/api/v1/products","statusCode":304,"responseTime":"39ms","ip":"::1","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Edg/145.0.0.0","userId":"2ee36f23-00c1-4c19-9552-86b1fe5bb206","companyId":"006120ca-9187-4b9f-b0f3-f1b20eb8523b"}
+2026-02-26 17:52:06 [HTTP]: ::1 - - [26/Feb/2026:16:52:06 +0000] "GET /api/v1/stock/movements HTTP/1.1" 304 - "http://localhost:5174/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Edg/145.0.0.0"
+2026-02-26 17:52:06 [INFO]: HTTP Request {"method":"GET","url":"/api/v1/stock/movements","statusCode":304,"responseTime":"39ms","ip":"::1","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Edg/145.0.0.0","userId":"2ee36f23-00c1-4c19-9552-86b1fe5bb206","companyId":"006120ca-9187-4b9f-b0f3-f1b20eb8523b"}
+2026-02-26 17:55:29 [INFO]: =================================================================
+2026-02-26 17:55:31 [INFO]: =================================================================
+2026-02-26 17:55:31 [INFO]: Starting Inventory Management System...
+2026-02-26 17:55:31 [INFO]: =================================================================
+2026-02-26 17:55:31 [INFO]: Validating environment configuration...
+2026-02-26 17:55:31 [INFO]: Environment validation passed
+2026-02-26 17:55:31 [INFO]: Ensuring required directories exist...
+2026-02-26 17:55:31 [INFO]: Directory check completed
+2026-02-26 17:55:31 [INFO]: System Information:
+2026-02-26 17:55:31 [INFO]:   Node.js: v24.12.0
+2026-02-26 17:55:31 [INFO]:   Platform: win32 (x64)
+2026-02-26 17:55:31 [INFO]:   Environment: development
+2026-02-26 17:55:31 [INFO]:   Memory: 58 MB
+2026-02-26 17:55:31 [INFO]:   CPU Cores: 8
+2026-02-26 17:55:31 [INFO]:   Process ID: 20596
+2026-02-26 17:55:31 [INFO]: Connection Information:
+2026-02-26 17:55:31 [INFO]:   Database: MySQL (localhost:3306)
+2026-02-26 17:55:31 [INFO]:   Database Name: inventory_db
+2026-02-26 17:55:31 [INFO]:   Server Port: 5000
+2026-02-26 17:55:31 [INFO]: Testing database connection...
+2026-02-26 17:55:31 [INFO]: Database connection established successfully
+2026-02-26 17:55:31 [INFO]: Database version: 10.4.32-MariaDB
+2026-02-26 17:55:31 [INFO]: Checking database storage engines...
+2026-02-26 17:55:31 [INFO]: Storage engine check completed
+2026-02-26 17:55:31 [INFO]: Synchronizing database schema...
+2026-02-26 17:55:31 [INFO]: Database schema synchronized successfully
+2026-02-26 17:55:31 [INFO]: Initializing scheduler service...
+2026-02-26 17:55:31 [INFO]: Initializing scheduler service...
+2026-02-26 17:55:31 [INFO]: Invoice cleanup enabled: deleting invoices older than 140 days, running every 24 hours
+2026-02-26 17:55:31 [INFO]: Invoice cleanup scheduled: running every 24 hours
+2026-02-26 17:55:31 [INFO]: Scheduler service initialized
+2026-02-26 17:55:31 [INFO]: Scheduler service initialized
+2026-02-26 17:55:31 [INFO]: =================================================================
+2026-02-26 17:55:31 [INFO]: Server Started Successfully!
+2026-02-26 17:55:31 [INFO]: =================================================================
+2026-02-26 17:55:31 [INFO]:   Status: RUNNING
+2026-02-26 17:55:31 [INFO]:   Mode: DEVELOPMENT
+2026-02-26 17:55:31 [INFO]:   Port: 5000
+2026-02-26 17:55:31 [INFO]: 
+2026-02-26 17:55:31 [INFO]: Available Endpoints:
+2026-02-26 17:55:31 [INFO]:   🏠 Home:        http://localhost:5000/
+2026-02-26 17:55:31 [INFO]:   🚀 API:         http://localhost:5000/api/v1
+2026-02-26 17:55:31 [INFO]:   ❤️  Health:      http://localhost:5000/health
+2026-02-26 17:55:31 [INFO]: 
+2026-02-26 17:55:31 [INFO]: API Routes:
+2026-02-26 17:55:31 [INFO]:   🔐 Auth:        http://localhost:5000/api/v1/auth
+2026-02-26 17:55:31 [INFO]:   👥 Users:       http://localhost:5000/api/v1/users
+2026-02-26 17:55:31 [INFO]:   🏢 Companies:   http://localhost:5000/api/v1/companies
+2026-02-26 17:55:31 [INFO]:   📦 Products:    http://localhost:5000/api/v1/products
+2026-02-26 17:55:31 [INFO]:   🏷️  Categories:  http://localhost:5000/api/v1/categories
+2026-02-26 17:55:31 [INFO]:   👤 Customers:   http://localhost:5000/api/v1/customers
+2026-02-26 17:55:31 [INFO]:   🧾 Invoices:    http://localhost:5000/api/v1/invoices
+2026-02-26 17:55:31 [INFO]:   💰 Expenses:    http://localhost:5000/api/v1/expenses
+2026-02-26 17:55:31 [INFO]:   📊 Reports:     http://localhost:5000/api/v1/reports
+2026-02-26 17:55:31 [INFO]:   📈 Stock:       http://localhost:5000/api/v1/stock
+2026-02-26 17:55:31 [INFO]:   ⚙️ Settings:    http://localhost:5000/api/v1/settings
+2026-02-26 17:55:31 [INFO]:   📋 Subscriptions: http://localhost:5000/api/v1/subscriptions
+2026-02-26 17:55:31 [INFO]: =================================================================
+2026-02-26 17:55:31 [INFO]: System Event {"event":"server_started","port":5000,"environment":"development","nodeVersion":"v24.12.0","pid":20596}
+2026-02-26 17:55:32 [DEBUG]: Company isolation check passed {"companyId":"006120ca-9187-4b9f-b0f3-f1b20eb8523b","userId":"2ee36f23-00c1-4c19-9552-86b1fe5bb206","path":"/sales"}
+2026-02-26 17:55:32 [DEBUG]: Company isolation check passed {"companyId":"006120ca-9187-4b9f-b0f3-f1b20eb8523b","userId":"2ee36f23-00c1-4c19-9552-86b1fe5bb206","path":"/profit"}
+2026-02-26 17:55:32 [DEBUG]: Company isolation check passed {"companyId":"006120ca-9187-4b9f-b0f3-f1b20eb8523b","userId":"2ee36f23-00c1-4c19-9552-86b1fe5bb206","path":"/customers"}
+2026-02-26 17:55:32 [DEBUG]: Company isolation check passed {"companyId":"006120ca-9187-4b9f-b0f3-f1b20eb8523b","userId":"2ee36f23-00c1-4c19-9552-86b1fe5bb206","path":"/inventory"}
+2026-02-26 17:55:32 [DEBUG]: Company isolation check passed {"companyId":"006120ca-9187-4b9f-b0f3-f1b20eb8523b","userId":"2ee36f23-00c1-4c19-9552-86b1fe5bb206","path":"/expenses"}
+2026-02-26 17:55:32 [DEBUG]: Company isolation check passed {"companyId":"006120ca-9187-4b9f-b0f3-f1b20eb8523b","userId":"2ee36f23-00c1-4c19-9552-86b1fe5bb206","path":"/top-products"}
+2026-02-26 17:55:32 [HTTP]: ::1 - - [26/Feb/2026:16:55:32 +0000] "GET /api/v1/reports/customers?period=month HTTP/1.1" 304 - "http://localhost:5174/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Edg/145.0.0.0"
+2026-02-26 17:55:32 [INFO]: HTTP Request {"method":"GET","url":"/api/v1/reports/customers?period=month","statusCode":304,"responseTime":"73ms","ip":"::1","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Edg/145.0.0.0","userId":"2ee36f23-00c1-4c19-9552-86b1fe5bb206","companyId":"006120ca-9187-4b9f-b0f3-f1b20eb8523b"}
+2026-02-26 17:55:32 [HTTP]: ::1 - - [26/Feb/2026:16:55:32 +0000] "GET /api/v1/reports/inventory HTTP/1.1" 200 11369 "http://localhost:5174/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Edg/145.0.0.0"
+2026-02-26 17:55:32 [INFO]: HTTP Request {"method":"GET","url":"/api/v1/reports/inventory","statusCode":200,"responseTime":"87ms","ip":"::1","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Edg/145.0.0.0","userId":"2ee36f23-00c1-4c19-9552-86b1fe5bb206","companyId":"006120ca-9187-4b9f-b0f3-f1b20eb8523b"}
+2026-02-26 17:55:32 [HTTP]: ::1 - - [26/Feb/2026:16:55:32 +0000] "GET /api/v1/reports/expenses?period=month HTTP/1.1" 304 - "http://localhost:5174/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Edg/145.0.0.0"
+2026-02-26 17:55:32 [INFO]: HTTP Request {"method":"GET","url":"/api/v1/reports/expenses?period=month","statusCode":304,"responseTime":"89ms","ip":"::1","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Edg/145.0.0.0","userId":"2ee36f23-00c1-4c19-9552-86b1fe5bb206","companyId":"006120ca-9187-4b9f-b0f3-f1b20eb8523b"}
+2026-02-26 17:55:32 [HTTP]: ::1 - - [26/Feb/2026:16:55:32 +0000] "GET /api/v1/reports/top-products?limit=5 HTTP/1.1" 304 - "http://localhost:5174/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Edg/145.0.0.0"
+2026-02-26 17:55:32 [INFO]: HTTP Request {"method":"GET","url":"/api/v1/reports/top-products?limit=5","statusCode":304,"responseTime":"97ms","ip":"::1","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Edg/145.0.0.0","userId":"2ee36f23-00c1-4c19-9552-86b1fe5bb206","companyId":"006120ca-9187-4b9f-b0f3-f1b20eb8523b"}
+2026-02-26 17:55:32 [HTTP]: ::1 - - [26/Feb/2026:16:55:32 +0000] "GET /api/v1/reports/sales?period=month HTTP/1.1" 304 - "http://localhost:5174/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Edg/145.0.0.0"
+2026-02-26 17:55:32 [INFO]: HTTP Request {"method":"GET","url":"/api/v1/reports/sales?period=month","statusCode":304,"responseTime":"129ms","ip":"::1","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Edg/145.0.0.0","userId":"2ee36f23-00c1-4c19-9552-86b1fe5bb206","companyId":"006120ca-9187-4b9f-b0f3-f1b20eb8523b"}
+2026-02-26 17:55:32 [DEBUG]: Company isolation check passed {"companyId":"006120ca-9187-4b9f-b0f3-f1b20eb8523b","userId":"2ee36f23-00c1-4c19-9552-86b1fe5bb206","path":"/customers"}
+2026-02-26 17:55:32 [DEBUG]: Company isolation check passed {"companyId":"006120ca-9187-4b9f-b0f3-f1b20eb8523b","userId":"2ee36f23-00c1-4c19-9552-86b1fe5bb206","path":"/inventory"}
+2026-02-26 17:55:32 [DEBUG]: Company isolation check passed {"companyId":"006120ca-9187-4b9f-b0f3-f1b20eb8523b","userId":"2ee36f23-00c1-4c19-9552-86b1fe5bb206","path":"/expenses"}
+2026-02-26 17:55:32 [HTTP]: ::1 - - [26/Feb/2026:16:55:32 +0000] "GET /api/v1/reports/customers?period=month HTTP/1.1" 304 - "http://localhost:5174/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Edg/145.0.0.0"
+2026-02-26 17:55:32 [INFO]: HTTP Request {"method":"GET","url":"/api/v1/reports/customers?period=month","statusCode":304,"responseTime":"38ms","ip":"::1","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Edg/145.0.0.0","userId":"2ee36f23-00c1-4c19-9552-86b1fe5bb206","companyId":"006120ca-9187-4b9f-b0f3-f1b20eb8523b"}
+2026-02-26 17:55:32 [HTTP]: ::1 - - [26/Feb/2026:16:55:32 +0000] "GET /api/v1/reports/inventory HTTP/1.1" 304 - "http://localhost:5174/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Edg/145.0.0.0"
+2026-02-26 17:55:32 [INFO]: HTTP Request {"method":"GET","url":"/api/v1/reports/inventory","statusCode":304,"responseTime":"45ms","ip":"::1","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Edg/145.0.0.0","userId":"2ee36f23-00c1-4c19-9552-86b1fe5bb206","companyId":"006120ca-9187-4b9f-b0f3-f1b20eb8523b"}
+2026-02-26 17:55:32 [DEBUG]: Company isolation check passed {"companyId":"006120ca-9187-4b9f-b0f3-f1b20eb8523b","userId":"2ee36f23-00c1-4c19-9552-86b1fe5bb206","path":"/top-products"}
+2026-02-26 17:55:32 [HTTP]: ::1 - - [26/Feb/2026:16:55:32 +0000] "GET /api/v1/reports/profit?period=month HTTP/1.1" 304 - "http://localhost:5174/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Edg/145.0.0.0"
+2026-02-26 17:55:32 [INFO]: HTTP Request {"method":"GET","url":"/api/v1/reports/profit?period=month","statusCode":304,"responseTime":"150ms","ip":"::1","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Edg/145.0.0.0","userId":"2ee36f23-00c1-4c19-9552-86b1fe5bb206","companyId":"006120ca-9187-4b9f-b0f3-f1b20eb8523b"}
+2026-02-26 17:55:32 [DEBUG]: Company isolation check passed {"companyId":"006120ca-9187-4b9f-b0f3-f1b20eb8523b","userId":"2ee36f23-00c1-4c19-9552-86b1fe5bb206","path":"/sales"}
+2026-02-26 17:55:32 [HTTP]: ::1 - - [26/Feb/2026:16:55:32 +0000] "GET /api/v1/reports/expenses?period=month HTTP/1.1" 304 - "http://localhost:5174/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Edg/145.0.0.0"
+2026-02-26 17:55:32 [INFO]: HTTP Request {"method":"GET","url":"/api/v1/reports/expenses?period=month","statusCode":304,"responseTime":"48ms","ip":"::1","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Edg/145.0.0.0","userId":"2ee36f23-00c1-4c19-9552-86b1fe5bb206","companyId":"006120ca-9187-4b9f-b0f3-f1b20eb8523b"}
+2026-02-26 17:55:32 [HTTP]: ::1 - - [26/Feb/2026:16:55:32 +0000] "GET /api/v1/reports/top-products?limit=5 HTTP/1.1" 304 - "http://localhost:5174/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Edg/145.0.0.0"
+2026-02-26 17:55:32 [INFO]: HTTP Request {"method":"GET","url":"/api/v1/reports/top-products?limit=5","statusCode":304,"responseTime":"40ms","ip":"::1","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Edg/145.0.0.0","userId":"2ee36f23-00c1-4c19-9552-86b1fe5bb206","companyId":"006120ca-9187-4b9f-b0f3-f1b20eb8523b"}
+2026-02-26 17:55:32 [HTTP]: ::1 - - [26/Feb/2026:16:55:32 +0000] "GET /api/v1/reports/sales?period=month HTTP/1.1" 304 - "http://localhost:5174/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Edg/145.0.0.0"
+2026-02-26 17:55:32 [INFO]: HTTP Request {"method":"GET","url":"/api/v1/reports/sales?period=month","statusCode":304,"responseTime":"44ms","ip":"::1","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Edg/145.0.0.0","userId":"2ee36f23-00c1-4c19-9552-86b1fe5bb206","companyId":"006120ca-9187-4b9f-b0f3-f1b20eb8523b"}
+2026-02-26 17:55:32 [DEBUG]: Company isolation check passed {"companyId":"006120ca-9187-4b9f-b0f3-f1b20eb8523b","userId":"2ee36f23-00c1-4c19-9552-86b1fe5bb206","path":"/profit"}
+2026-02-26 17:55:32 [HTTP]: ::1 - - [26/Feb/2026:16:55:32 +0000] "GET /api/v1/reports/profit?period=month HTTP/1.1" 304 - "http://localhost:5174/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Edg/145.0.0.0"
+2026-02-26 17:55:32 [INFO]: HTTP Request {"method":"GET","url":"/api/v1/reports/profit?period=month","statusCode":304,"responseTime":"18ms","ip":"::1","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Edg/145.0.0.0","userId":"2ee36f23-00c1-4c19-9552-86b1fe5bb206","companyId":"006120ca-9187-4b9f-b0f3-f1b20eb8523b"}
+2026-02-26 17:55:38 [DEBUG]: Company isolation check passed {"companyId":"006120ca-9187-4b9f-b0f3-f1b20eb8523b","userId":"2ee36f23-00c1-4c19-9552-86b1fe5bb206","path":"/dashboard"}
+2026-02-26 17:55:38 [HTTP]: ::1 - - [26/Feb/2026:16:55:38 +0000] "GET /api/v1/reports/dashboard?period=month HTTP/1.1" 304 - "http://localhost:5174/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Edg/145.0.0.0"
+2026-02-26 17:55:38 [INFO]: HTTP Request {"method":"GET","url":"/api/v1/reports/dashboard?period=month","statusCode":304,"responseTime":"41ms","ip":"::1","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Edg/145.0.0.0","userId":"2ee36f23-00c1-4c19-9552-86b1fe5bb206","companyId":"006120ca-9187-4b9f-b0f3-f1b20eb8523b"}
+2026-02-26 17:55:38 [DEBUG]: Company isolation check passed {"companyId":"006120ca-9187-4b9f-b0f3-f1b20eb8523b","userId":"2ee36f23-00c1-4c19-9552-86b1fe5bb206","path":"/dashboard"}
+2026-02-26 17:55:38 [HTTP]: ::1 - - [26/Feb/2026:16:55:38 +0000] "GET /api/v1/reports/dashboard?period=month HTTP/1.1" 304 - "http://localhost:5174/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Edg/145.0.0.0"
+2026-02-26 17:55:38 [INFO]: HTTP Request {"method":"GET","url":"/api/v1/reports/dashboard?period=month","statusCode":304,"responseTime":"26ms","ip":"::1","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Edg/145.0.0.0","userId":"2ee36f23-00c1-4c19-9552-86b1fe5bb206","companyId":"006120ca-9187-4b9f-b0f3-f1b20eb8523b"}
+2026-02-26 17:56:02 [DEBUG]: Company isolation check passed {"companyId":"006120ca-9187-4b9f-b0f3-f1b20eb8523b","userId":"2ee36f23-00c1-4c19-9552-86b1fe5bb206","path":"/sales"}
+2026-02-26 17:56:02 [DEBUG]: Company isolation check passed {"companyId":"006120ca-9187-4b9f-b0f3-f1b20eb8523b","userId":"2ee36f23-00c1-4c19-9552-86b1fe5bb206","path":"/profit"}
+2026-02-26 17:56:02 [DEBUG]: Company isolation check passed {"companyId":"006120ca-9187-4b9f-b0f3-f1b20eb8523b","userId":"2ee36f23-00c1-4c19-9552-86b1fe5bb206","path":"/top-products"}
+2026-02-26 17:56:02 [DEBUG]: Company isolation check passed {"companyId":"006120ca-9187-4b9f-b0f3-f1b20eb8523b","userId":"2ee36f23-00c1-4c19-9552-86b1fe5bb206","path":"/inventory"}
+2026-02-26 17:56:02 [DEBUG]: Company isolation check passed {"companyId":"006120ca-9187-4b9f-b0f3-f1b20eb8523b","userId":"2ee36f23-00c1-4c19-9552-86b1fe5bb206","path":"/customers"}
+2026-02-26 17:56:02 [DEBUG]: Company isolation check passed {"companyId":"006120ca-9187-4b9f-b0f3-f1b20eb8523b","userId":"2ee36f23-00c1-4c19-9552-86b1fe5bb206","path":"/expenses"}
+2026-02-26 17:56:02 [HTTP]: ::1 - - [26/Feb/2026:16:56:02 +0000] "GET /api/v1/reports/sales?period=month HTTP/1.1" 304 - "http://localhost:5174/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Edg/145.0.0.0"
+2026-02-26 17:56:02 [INFO]: HTTP Request {"method":"GET","url":"/api/v1/reports/sales?period=month","statusCode":304,"responseTime":"59ms","ip":"::1","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Edg/145.0.0.0","userId":"2ee36f23-00c1-4c19-9552-86b1fe5bb206","companyId":"006120ca-9187-4b9f-b0f3-f1b20eb8523b"}
+2026-02-26 17:56:02 [HTTP]: ::1 - - [26/Feb/2026:16:56:02 +0000] "GET /api/v1/reports/top-products?limit=5 HTTP/1.1" 304 - "http://localhost:5174/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Edg/145.0.0.0"
+2026-02-26 17:56:02 [INFO]: HTTP Request {"method":"GET","url":"/api/v1/reports/top-products?limit=5","statusCode":304,"responseTime":"46ms","ip":"::1","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Edg/145.0.0.0","userId":"2ee36f23-00c1-4c19-9552-86b1fe5bb206","companyId":"006120ca-9187-4b9f-b0f3-f1b20eb8523b"}
+2026-02-26 17:56:02 [HTTP]: ::1 - - [26/Feb/2026:16:56:02 +0000] "GET /api/v1/reports/inventory HTTP/1.1" 304 - "http://localhost:5174/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Edg/145.0.0.0"
+2026-02-26 17:56:02 [INFO]: HTTP Request {"method":"GET","url":"/api/v1/reports/inventory","statusCode":304,"responseTime":"71ms","ip":"::1","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Edg/145.0.0.0","userId":"2ee36f23-00c1-4c19-9552-86b1fe5bb206","companyId":"006120ca-9187-4b9f-b0f3-f1b20eb8523b"}
+2026-02-26 17:56:02 [HTTP]: ::1 - - [26/Feb/2026:16:56:02 +0000] "GET /api/v1/reports/customers?period=month HTTP/1.1" 304 - "http://localhost:5174/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Edg/145.0.0.0"
+2026-02-26 17:56:02 [INFO]: HTTP Request {"method":"GET","url":"/api/v1/reports/customers?period=month","statusCode":304,"responseTime":"71ms","ip":"::1","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Edg/145.0.0.0","userId":"2ee36f23-00c1-4c19-9552-86b1fe5bb206","companyId":"006120ca-9187-4b9f-b0f3-f1b20eb8523b"}
+2026-02-26 17:56:02 [HTTP]: ::1 - - [26/Feb/2026:16:56:02 +0000] "GET /api/v1/reports/expenses?period=month HTTP/1.1" 304 - "http://localhost:5174/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Edg/145.0.0.0"
+2026-02-26 17:56:02 [INFO]: HTTP Request {"method":"GET","url":"/api/v1/reports/expenses?period=month","statusCode":304,"responseTime":"72ms","ip":"::1","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Edg/145.0.0.0","userId":"2ee36f23-00c1-4c19-9552-86b1fe5bb206","companyId":"006120ca-9187-4b9f-b0f3-f1b20eb8523b"}
+2026-02-26 17:56:02 [DEBUG]: Company isolation check passed {"companyId":"006120ca-9187-4b9f-b0f3-f1b20eb8523b","userId":"2ee36f23-00c1-4c19-9552-86b1fe5bb206","path":"/sales"}
+2026-02-26 17:56:02 [DEBUG]: Company isolation check passed {"companyId":"006120ca-9187-4b9f-b0f3-f1b20eb8523b","userId":"2ee36f23-00c1-4c19-9552-86b1fe5bb206","path":"/top-products"}
+2026-02-26 17:56:02 [HTTP]: ::1 - - [26/Feb/2026:16:56:02 +0000] "GET /api/v1/reports/profit?period=month HTTP/1.1" 304 - "http://localhost:5174/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Edg/145.0.0.0"
+2026-02-26 17:56:02 [INFO]: HTTP Request {"method":"GET","url":"/api/v1/reports/profit?period=month","statusCode":304,"responseTime":"116ms","ip":"::1","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Edg/145.0.0.0","userId":"2ee36f23-00c1-4c19-9552-86b1fe5bb206","companyId":"006120ca-9187-4b9f-b0f3-f1b20eb8523b"}
+2026-02-26 17:56:02 [DEBUG]: Company isolation check passed {"companyId":"006120ca-9187-4b9f-b0f3-f1b20eb8523b","userId":"2ee36f23-00c1-4c19-9552-86b1fe5bb206","path":"/inventory"}
+2026-02-26 17:56:03 [DEBUG]: Company isolation check passed {"companyId":"006120ca-9187-4b9f-b0f3-f1b20eb8523b","userId":"2ee36f23-00c1-4c19-9552-86b1fe5bb206","path":"/customers"}
+2026-02-26 17:56:03 [DEBUG]: Company isolation check passed {"companyId":"006120ca-9187-4b9f-b0f3-f1b20eb8523b","userId":"2ee36f23-00c1-4c19-9552-86b1fe5bb206","path":"/expenses"}
+2026-02-26 17:56:03 [HTTP]: ::1 - - [26/Feb/2026:16:56:03 +0000] "GET /api/v1/reports/sales?period=month HTTP/1.1" 304 - "http://localhost:5174/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Edg/145.0.0.0"
+2026-02-26 17:56:03 [INFO]: HTTP Request {"method":"GET","url":"/api/v1/reports/sales?period=month","statusCode":304,"responseTime":"51ms","ip":"::1","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Edg/145.0.0.0","userId":"2ee36f23-00c1-4c19-9552-86b1fe5bb206","companyId":"006120ca-9187-4b9f-b0f3-f1b20eb8523b"}
+2026-02-26 17:56:03 [HTTP]: ::1 - - [26/Feb/2026:16:56:03 +0000] "GET /api/v1/reports/top-products?limit=5 HTTP/1.1" 304 - "http://localhost:5174/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Edg/145.0.0.0"
+2026-02-26 17:56:03 [INFO]: HTTP Request {"method":"GET","url":"/api/v1/reports/top-products?limit=5","statusCode":304,"responseTime":"53ms","ip":"::1","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Edg/145.0.0.0","userId":"2ee36f23-00c1-4c19-9552-86b1fe5bb206","companyId":"006120ca-9187-4b9f-b0f3-f1b20eb8523b"}
+2026-02-26 17:56:03 [HTTP]: ::1 - - [26/Feb/2026:16:56:03 +0000] "GET /api/v1/reports/inventory HTTP/1.1" 304 - "http://localhost:5174/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Edg/145.0.0.0"
+2026-02-26 17:56:03 [INFO]: HTTP Request {"method":"GET","url":"/api/v1/reports/inventory","statusCode":304,"responseTime":"60ms","ip":"::1","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Edg/145.0.0.0","userId":"2ee36f23-00c1-4c19-9552-86b1fe5bb206","companyId":"006120ca-9187-4b9f-b0f3-f1b20eb8523b"}
+2026-02-26 17:56:03 [HTTP]: ::1 - - [26/Feb/2026:16:56:03 +0000] "GET /api/v1/reports/customers?period=month HTTP/1.1" 304 - "http://localhost:5174/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Edg/145.0.0.0"
+2026-02-26 17:56:03 [INFO]: HTTP Request {"method":"GET","url":"/api/v1/reports/customers?period=month","statusCode":304,"responseTime":"60ms","ip":"::1","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Edg/145.0.0.0","userId":"2ee36f23-00c1-4c19-9552-86b1fe5bb206","companyId":"006120ca-9187-4b9f-b0f3-f1b20eb8523b"}
+2026-02-26 17:56:03 [HTTP]: ::1 - - [26/Feb/2026:16:56:03 +0000] "GET /api/v1/reports/expenses?period=month HTTP/1.1" 304 - "http://localhost:5174/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Edg/145.0.0.0"
+2026-02-26 17:56:03 [INFO]: HTTP Request {"method":"GET","url":"/api/v1/reports/expenses?period=month","statusCode":304,"responseTime":"61ms","ip":"::1","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Edg/145.0.0.0","userId":"2ee36f23-00c1-4c19-9552-86b1fe5bb206","companyId":"006120ca-9187-4b9f-b0f3-f1b20eb8523b"}
+2026-02-26 17:56:03 [DEBUG]: Company isolation check passed {"companyId":"006120ca-9187-4b9f-b0f3-f1b20eb8523b","userId":"2ee36f23-00c1-4c19-9552-86b1fe5bb206","path":"/profit"}
+2026-02-26 17:56:03 [HTTP]: ::1 - - [26/Feb/2026:16:56:03 +0000] "GET /api/v1/reports/profit?period=month HTTP/1.1" 304 - "http://localhost:5174/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Edg/145.0.0.0"
+2026-02-26 17:56:03 [INFO]: HTTP Request {"method":"GET","url":"/api/v1/reports/profit?period=month","statusCode":304,"responseTime":"33ms","ip":"::1","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Edg/145.0.0.0","userId":"2ee36f23-00c1-4c19-9552-86b1fe5bb206","companyId":"006120ca-9187-4b9f-b0f3-f1b20eb8523b"}
+2026-02-26 17:56:25 [DEBUG]: Company isolation check passed {"companyId":"006120ca-9187-4b9f-b0f3-f1b20eb8523b","userId":"2ee36f23-00c1-4c19-9552-86b1fe5bb206","path":"/"}
+2026-02-26 17:56:25 [DEBUG]: Company isolation check passed {"companyId":"006120ca-9187-4b9f-b0f3-f1b20eb8523b","userId":"2ee36f23-00c1-4c19-9552-86b1fe5bb206","path":"/"}
+2026-02-26 17:56:25 [HTTP]: ::1 - - [26/Feb/2026:16:56:25 +0000] "GET /api/v1/invoices HTTP/1.1" 200 865 "http://localhost:5174/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Edg/145.0.0.0"
+2026-02-26 17:56:25 [INFO]: HTTP Request {"method":"GET","url":"/api/v1/invoices","statusCode":200,"responseTime":"29ms","ip":"::1","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Edg/145.0.0.0","userId":"2ee36f23-00c1-4c19-9552-86b1fe5bb206","companyId":"006120ca-9187-4b9f-b0f3-f1b20eb8523b"}
+2026-02-26 17:56:25 [HTTP]: ::1 - - [26/Feb/2026:16:56:25 +0000] "GET /api/v1/customers HTTP/1.1" 304 - "http://localhost:5174/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Edg/145.0.0.0"
+2026-02-26 17:56:25 [INFO]: HTTP Request {"method":"GET","url":"/api/v1/customers","statusCode":304,"responseTime":"33ms","ip":"::1","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Edg/145.0.0.0","userId":"2ee36f23-00c1-4c19-9552-86b1fe5bb206","companyId":"006120ca-9187-4b9f-b0f3-f1b20eb8523b"}
+2026-02-26 17:56:25 [DEBUG]: Company isolation check passed {"companyId":"006120ca-9187-4b9f-b0f3-f1b20eb8523b","userId":"2ee36f23-00c1-4c19-9552-86b1fe5bb206","path":"/"}
+2026-02-26 17:56:25 [DEBUG]: Company isolation check passed {"companyId":"006120ca-9187-4b9f-b0f3-f1b20eb8523b","userId":"2ee36f23-00c1-4c19-9552-86b1fe5bb206","path":"/"}
+2026-02-26 17:56:25 [HTTP]: ::1 - - [26/Feb/2026:16:56:25 +0000] "GET /api/v1/invoices HTTP/1.1" 304 - "http://localhost:5174/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Edg/145.0.0.0"
+2026-02-26 17:56:25 [INFO]: HTTP Request {"method":"GET","url":"/api/v1/invoices","statusCode":304,"responseTime":"19ms","ip":"::1","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Edg/145.0.0.0","userId":"2ee36f23-00c1-4c19-9552-86b1fe5bb206","companyId":"006120ca-9187-4b9f-b0f3-f1b20eb8523b"}
+2026-02-26 17:56:25 [HTTP]: ::1 - - [26/Feb/2026:16:56:25 +0000] "GET /api/v1/customers HTTP/1.1" 304 - "http://localhost:5174/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Edg/145.0.0.0"
+2026-02-26 17:56:25 [INFO]: HTTP Request {"method":"GET","url":"/api/v1/customers","statusCode":304,"responseTime":"18ms","ip":"::1","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Edg/145.0.0.0","userId":"2ee36f23-00c1-4c19-9552-86b1fe5bb206","companyId":"006120ca-9187-4b9f-b0f3-f1b20eb8523b"}
+2026-02-26 17:56:40 [DEBUG]: Company isolation check passed {"companyId":"006120ca-9187-4b9f-b0f3-f1b20eb8523b","userId":"2ee36f23-00c1-4c19-9552-86b1fe5bb206","path":"/categories"}
+2026-02-26 17:56:40 [DEBUG]: Company isolation check passed {"companyId":"006120ca-9187-4b9f-b0f3-f1b20eb8523b","userId":"2ee36f23-00c1-4c19-9552-86b1fe5bb206","path":"/"}
+2026-02-26 17:56:40 [ERROR]: Server Error: {"error":"User is associated to Expense multiple times. To identify the correct association, you must use the 'as' keyword to specify the alias of the association you want to include.","url":"/api/v1/expenses","method":"GET","user":"2ee36f23-00c1-4c19-9552-86b1fe5bb206"}
+SequelizeEagerLoadingError: User is associated to Expense multiple times. To identify the correct association, you must use the 'as' keyword to specify the alias of the association you want to include.
+    at Expense._getIncludedAssociation (C:\Users\PTD\Desktop\project-bolt-sb1-4azgi4ci (6)_version4\mukapps1\node_modules\sequelize\lib\model.js:580:13)
+    at Expense._validateIncludedElement (C:\Users\PTD\Desktop\project-bolt-sb1-4azgi4ci (6)_version4\mukapps1\node_modules\sequelize\lib\model.js:502:53)
+    at C:\Users\PTD\Desktop\project-bolt-sb1-4azgi4ci (6)_version4\mukapps1\node_modules\sequelize\lib\model.js:421:37
+    at Array.map (<anonymous>)
+    at Expense._validateIncludedElements (C:\Users\PTD\Desktop\project-bolt-sb1-4azgi4ci (6)_version4\mukapps1\node_modules\sequelize\lib\model.js:417:39)
+    at Expense.aggregate (C:\Users\PTD\Desktop\project-bolt-sb1-4azgi4ci (6)_version4\mukapps1\node_modules\sequelize\lib\model.js:1252:12)
+    at Expense.count (C:\Users\PTD\Desktop\project-bolt-sb1-4azgi4ci (6)_version4\mukapps1\node_modules\sequelize\lib\model.js:1306:31)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async Promise.all (index 0)
+    at async Expense.findAndCountAll (C:\Users\PTD\Desktop\project-bolt-sb1-4azgi4ci (6)_version4\mukapps1\node_modules\sequelize\lib\model.js:1322:27)
+2026-02-26 17:56:40 [HTTP]: ::1 - - [26/Feb/2026:16:56:40 +0000] "GET /api/v1/expenses HTTP/1.1" 500 1678 "http://localhost:5174/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Edg/145.0.0.0"
+2026-02-26 17:56:40 [ERROR]: HTTP Request Failed {"method":"GET","url":"/api/v1/expenses","statusCode":500,"responseTime":"21ms","ip":"::1","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Edg/145.0.0.0","userId":"2ee36f23-00c1-4c19-9552-86b1fe5bb206","companyId":"006120ca-9187-4b9f-b0f3-f1b20eb8523b"}
+2026-02-26 17:56:40 [DEBUG]: Company isolation check passed {"companyId":"006120ca-9187-4b9f-b0f3-f1b20eb8523b","userId":"2ee36f23-00c1-4c19-9552-86b1fe5bb206","path":"/"}
+2026-02-26 17:56:40 [ERROR]: Server Error: {"error":"User is associated to Expense multiple times. To identify the correct association, you must use the 'as' keyword to specify the alias of the association you want to include.","url":"/api/v1/expenses","method":"GET","user":"2ee36f23-00c1-4c19-9552-86b1fe5bb206"}
+SequelizeEagerLoadingError: User is associated to Expense multiple times. To identify the correct association, you must use the 'as' keyword to specify the alias of the association you want to include.
+    at Expense._getIncludedAssociation (C:\Users\PTD\Desktop\project-bolt-sb1-4azgi4ci (6)_version4\mukapps1\node_modules\sequelize\lib\model.js:580:13)
+    at Expense._validateIncludedElement (C:\Users\PTD\Desktop\project-bolt-sb1-4azgi4ci (6)_version4\mukapps1\node_modules\sequelize\lib\model.js:502:53)
+    at C:\Users\PTD\Desktop\project-bolt-sb1-4azgi4ci (6)_version4\mukapps1\node_modules\sequelize\lib\model.js:421:37
+    at Array.map (<anonymous>)
+    at Expense._validateIncludedElements (C:\Users\PTD\Desktop\project-bolt-sb1-4azgi4ci (6)_version4\mukapps1\node_modules\sequelize\lib\model.js:417:39)
+    at Expense.aggregate (C:\Users\PTD\Desktop\project-bolt-sb1-4azgi4ci (6)_version4\mukapps1\node_modules\sequelize\lib\model.js:1252:12)
+    at Expense.count (C:\Users\PTD\Desktop\project-bolt-sb1-4azgi4ci (6)_version4\mukapps1\node_modules\sequelize\lib\model.js:1306:31)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async Promise.all (index 0)
+    at async Expense.findAndCountAll (C:\Users\PTD\Desktop\project-bolt-sb1-4azgi4ci (6)_version4\mukapps1\node_modules\sequelize\lib\model.js:1322:27)
+2026-02-26 17:56:40 [HTTP]: ::1 - - [26/Feb/2026:16:56:40 +0000] "GET /api/v1/expenses HTTP/1.1" 500 1678 "http://localhost:5174/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Edg/145.0.0.0"
+2026-02-26 17:56:40 [ERROR]: HTTP Request Failed {"method":"GET","url":"/api/v1/expenses","statusCode":500,"responseTime":"9ms","ip":"::1","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Edg/145.0.0.0","userId":"2ee36f23-00c1-4c19-9552-86b1fe5bb206","companyId":"006120ca-9187-4b9f-b0f3-f1b20eb8523b"}
+2026-02-26 17:56:40 [HTTP]: ::1 - - [26/Feb/2026:16:56:40 +0000] "GET /api/v1/expenses/categories HTTP/1.1" 304 - "http://localhost:5174/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Edg/145.0.0.0"
+2026-02-26 17:56:40 [INFO]: HTTP Request {"method":"GET","url":"/api/v1/expenses/categories","statusCode":304,"responseTime":"55ms","ip":"::1","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Edg/145.0.0.0","userId":"2ee36f23-00c1-4c19-9552-86b1fe5bb206","companyId":"006120ca-9187-4b9f-b0f3-f1b20eb8523b"}
+2026-02-26 17:56:40 [DEBUG]: Company isolation check passed {"companyId":"006120ca-9187-4b9f-b0f3-f1b20eb8523b","userId":"2ee36f23-00c1-4c19-9552-86b1fe5bb206","path":"/categories"}
+2026-02-26 17:56:40 [HTTP]: ::1 - - [26/Feb/2026:16:56:40 +0000] "GET /api/v1/expenses/categories HTTP/1.1" 304 - "http://localhost:5174/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Edg/145.0.0.0"
+2026-02-26 17:56:40 [INFO]: HTTP Request {"method":"GET","url":"/api/v1/expenses/categories","statusCode":304,"responseTime":"14ms","ip":"::1","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Edg/145.0.0.0","userId":"2ee36f23-00c1-4c19-9552-86b1fe5bb206","companyId":"006120ca-9187-4b9f-b0f3-f1b20eb8523b"}
+2026-02-26 18:18:18 [INFO]: =================================================================

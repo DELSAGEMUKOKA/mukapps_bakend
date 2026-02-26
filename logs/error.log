@@ -4825,3 +4825,30 @@ SequelizeEagerLoadingError: User is associated to Expense multiple times. To ide
 2026-02-26 16:51:00 [ERROR]: HTTP Request Failed {"method":"GET","url":"/favicon.ico","statusCode":404,"responseTime":"3ms","ip":"::1","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36"}
 2026-02-26 17:08:51 [ERROR]: HTTP Request Failed {"method":"POST","url":"/api/v1/subscriptions/renew","statusCode":404,"responseTime":"14ms","ip":"::1","userAgent":"PostmanRuntime/7.51.1","userId":"2ee36f23-00c1-4c19-9552-86b1fe5bb206","companyId":"006120ca-9187-4b9f-b0f3-f1b20eb8523b"}
 2026-02-26 17:09:16 [ERROR]: HTTP Request Failed {"method":"POST","url":"/api/v1/subscriptions/upgrade","statusCode":404,"responseTime":"12ms","ip":"::1","userAgent":"PostmanRuntime/7.51.1","userId":"2ee36f23-00c1-4c19-9552-86b1fe5bb206","companyId":"006120ca-9187-4b9f-b0f3-f1b20eb8523b"}
+2026-02-26 17:51:18 [ERROR]: HTTP Request Failed {"method":"POST","url":"/api/v1/subscriptions/upgrade","statusCode":404,"responseTime":"33ms","ip":"::1","userAgent":"PostmanRuntime/7.51.1","userId":"2ee36f23-00c1-4c19-9552-86b1fe5bb206","companyId":"006120ca-9187-4b9f-b0f3-f1b20eb8523b"}
+2026-02-26 17:56:40 [ERROR]: Server Error: {"error":"User is associated to Expense multiple times. To identify the correct association, you must use the 'as' keyword to specify the alias of the association you want to include.","url":"/api/v1/expenses","method":"GET","user":"2ee36f23-00c1-4c19-9552-86b1fe5bb206"}
+SequelizeEagerLoadingError: User is associated to Expense multiple times. To identify the correct association, you must use the 'as' keyword to specify the alias of the association you want to include.
+    at Expense._getIncludedAssociation (C:\Users\PTD\Desktop\project-bolt-sb1-4azgi4ci (6)_version4\mukapps1\node_modules\sequelize\lib\model.js:580:13)
+    at Expense._validateIncludedElement (C:\Users\PTD\Desktop\project-bolt-sb1-4azgi4ci (6)_version4\mukapps1\node_modules\sequelize\lib\model.js:502:53)
+    at C:\Users\PTD\Desktop\project-bolt-sb1-4azgi4ci (6)_version4\mukapps1\node_modules\sequelize\lib\model.js:421:37
+    at Array.map (<anonymous>)
+    at Expense._validateIncludedElements (C:\Users\PTD\Desktop\project-bolt-sb1-4azgi4ci (6)_version4\mukapps1\node_modules\sequelize\lib\model.js:417:39)
+    at Expense.aggregate (C:\Users\PTD\Desktop\project-bolt-sb1-4azgi4ci (6)_version4\mukapps1\node_modules\sequelize\lib\model.js:1252:12)
+    at Expense.count (C:\Users\PTD\Desktop\project-bolt-sb1-4azgi4ci (6)_version4\mukapps1\node_modules\sequelize\lib\model.js:1306:31)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async Promise.all (index 0)
+    at async Expense.findAndCountAll (C:\Users\PTD\Desktop\project-bolt-sb1-4azgi4ci (6)_version4\mukapps1\node_modules\sequelize\lib\model.js:1322:27)
+2026-02-26 17:56:40 [ERROR]: HTTP Request Failed {"method":"GET","url":"/api/v1/expenses","statusCode":500,"responseTime":"21ms","ip":"::1","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Edg/145.0.0.0","userId":"2ee36f23-00c1-4c19-9552-86b1fe5bb206","companyId":"006120ca-9187-4b9f-b0f3-f1b20eb8523b"}
+2026-02-26 17:56:40 [ERROR]: Server Error: {"error":"User is associated to Expense multiple times. To identify the correct association, you must use the 'as' keyword to specify the alias of the association you want to include.","url":"/api/v1/expenses","method":"GET","user":"2ee36f23-00c1-4c19-9552-86b1fe5bb206"}
+SequelizeEagerLoadingError: User is associated to Expense multiple times. To identify the correct association, you must use the 'as' keyword to specify the alias of the association you want to include.
+    at Expense._getIncludedAssociation (C:\Users\PTD\Desktop\project-bolt-sb1-4azgi4ci (6)_version4\mukapps1\node_modules\sequelize\lib\model.js:580:13)
+    at Expense._validateIncludedElement (C:\Users\PTD\Desktop\project-bolt-sb1-4azgi4ci (6)_version4\mukapps1\node_modules\sequelize\lib\model.js:502:53)
+    at C:\Users\PTD\Desktop\project-bolt-sb1-4azgi4ci (6)_version4\mukapps1\node_modules\sequelize\lib\model.js:421:37
+    at Array.map (<anonymous>)
+    at Expense._validateIncludedElements (C:\Users\PTD\Desktop\project-bolt-sb1-4azgi4ci (6)_version4\mukapps1\node_modules\sequelize\lib\model.js:417:39)
+    at Expense.aggregate (C:\Users\PTD\Desktop\project-bolt-sb1-4azgi4ci (6)_version4\mukapps1\node_modules\sequelize\lib\model.js:1252:12)
+    at Expense.count (C:\Users\PTD\Desktop\project-bolt-sb1-4azgi4ci (6)_version4\mukapps1\node_modules\sequelize\lib\model.js:1306:31)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async Promise.all (index 0)
+    at async Expense.findAndCountAll (C:\Users\PTD\Desktop\project-bolt-sb1-4azgi4ci (6)_version4\mukapps1\node_modules\sequelize\lib\model.js:1322:27)
+2026-02-26 17:56:40 [ERROR]: HTTP Request Failed {"method":"GET","url":"/api/v1/expenses","statusCode":500,"responseTime":"9ms","ip":"::1","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Edg/145.0.0.0","userId":"2ee36f23-00c1-4c19-9552-86b1fe5bb206","companyId":"006120ca-9187-4b9f-b0f3-f1b20eb8523b"}
